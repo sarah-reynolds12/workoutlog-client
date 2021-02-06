@@ -4,13 +4,16 @@ import WorkoutCreate from "./WorkoutCreate";
 import WorkoutTable from "./WorkoutTable";
 import WorkoutEdit from "./WorkoutEdit";
 
+
 const WorkoutIndex = (props) => {
 const [workouts, setWorkouts] = useState([]);
 const [updateActive, setUpdateActive] = useState(false);
 const [workoutToUpdate, setWorkoutToUpdate] = useState({});
 
+
 const fetchWorkouts = () => {
-    fetch('http://localhost:3000/log/', {
+    const token = localStorage.getItem('SessionToken')
+    fetch(`http://localhost:3000/log/${token}`, {
         method: 'GET',
         headers: new Headers ({
             'Content-Type': 'application/json',
