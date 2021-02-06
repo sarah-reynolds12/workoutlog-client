@@ -12,8 +12,8 @@ const [workoutToUpdate, setWorkoutToUpdate] = useState({});
 
 
 const fetchWorkouts = () => {
-    const token = localStorage.getItem('SessionToken')
-    fetch(`http://localhost:3000/log/${token}`, {
+    
+    fetch('http://localhost:3000/log/', {
         method: 'GET',
         headers: new Headers ({
             'Content-Type': 'application/json',
